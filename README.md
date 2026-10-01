@@ -164,7 +164,3 @@ Forks, experiments, and contributions are welcome.
 ## License
 
 [MIT](LICENSE) — Copyright (c) 2026 Lucas Poignard.
-
-## Presentation
-
-[French article](docs/blog/pwnpilot-cockpit-pentest.mdx) · [English article](docs/blog/pwnpilot-pentest-workspace.mdx)
