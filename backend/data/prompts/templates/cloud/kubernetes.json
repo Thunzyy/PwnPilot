@@ -1,0 +1,9 @@
+{
+  "name": "Kubernetes Pentest",
+  "description": "Kubernetes cluster penetration testing",
+  "category": "cloud",
+  "variables": [
+    "namespace:default"
+  ],
+  "content": "Test the Kubernetes cluster in namespace {namespace:default}.\n\n**Enumeration :**\n```bash\n# Current context\nkubectl config current-context\n\n# Namespaces\nkubectl get namespaces\n\n# Pods and services\nkubectl get pods -n {namespace:default}\nkubectl get services -n {namespace:default}\n\n# Secrets\nkubectl get secrets -n {namespace:default}\nkubectl get secret SECRET_NAME -o jsonpath='{.data}' | base64 -d\n```\n\n**RBAC :**\n```bash\nkubectl auth can-i --list\nkubectl get clusterrolebindings\nkubectl get rolebindings -n {namespace:default}\n```\n\n**From a compromised pod :**\n```bash\n# Service account token\ncat /var/run/secrets/kubernetes.io/serviceaccount/token\n\n# API access\ncurl -k -H \"Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)\" \\\n  https://kubernetes.default.svc/api/v1/namespaces/{namespace:default}/pods\n```\n\nTools : kube-hunter, kubescape, peirates"
+}

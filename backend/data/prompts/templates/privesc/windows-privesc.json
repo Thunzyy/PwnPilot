@@ -1,0 +1,9 @@
+{
+  "name": "Windows Privilege Escalation",
+  "description": "Windows privilege escalation checklist",
+  "category": "privesc",
+  "variables": [
+    "hostname"
+  ],
+  "content": "Enumerate and exploit privilege escalation vectors on {hostname} (Windows).\n\n**Quick wins :**\n```powershell\nwhoami /priv\nwhoami /groups\nnet user\nnet localgroup administrators\n```\n\n**Full enumeration :**\n```powershell\n# WinPEAS\n.\\winPEASany.exe\n\n# PowerUp\nImport-Module .\\PowerUp.ps1\nInvoke-AllChecks\n```\n\n**Common vectors :**\n1. SeImpersonatePrivilege → Potato family (JuicyPotato, PrintSpoofer, GodPotato)\n2. Unquoted service paths\n3. Weak service permissions\n4. AlwaysInstallElevated\n5. Stored credentials : `cmdkey /list`\n6. SAM/SYSTEM backup\n7. DLL hijacking\n\n**Token impersonation :**\n```powershell\n# If SeImpersonate is available\n.\\PrintSpoofer.exe -i -c \"cmd /c whoami\"\n```"
+}

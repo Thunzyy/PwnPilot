@@ -1,0 +1,41 @@
+{
+  "scenario": "large",
+  "document_count": 1000,
+  "folder_count": 20,
+  "iterations": 3,
+  "vault_root": "C:\\Users\\operator\\AppData\\Local\\Temp\\kb-benchmark-3hrl8vgy\\vault",
+  "source_id": "389931ff-360b-4b60-9743-a381c15ad4c5",
+  "operations": {
+    "index_cold": {
+      "count": 1,
+      "min_duration_ms": 8452,
+      "max_duration_ms": 8452,
+      "avg_duration_ms": 8452
+    },
+    "index_warm": {
+      "count": 1,
+      "min_duration_ms": 250,
+      "max_duration_ms": 250,
+      "avg_duration_ms": 250
+    },
+    "search": {
+      "count": 3,
+      "min_duration_ms": 21.71,
+      "max_duration_ms": 22.46,
+      "avg_duration_ms": 21.96
+    },
+    "tree": {
+      "count": 3,
+      "min_duration_ms": 8.1,
+      "max_duration_ms": 22.26,
+      "avg_duration_ms": 13.37
+    },
+    "document_open": {
+      "count": 3,
+      "min_duration_ms": 2.63,
+      "max_duration_ms": 6.41,
+      "avg_duration_ms": 3.96
+    }
+  },
+  "generated_at": "2026-04-11T22:46:14.602863+00:00"
+}

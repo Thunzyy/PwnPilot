@@ -1,0 +1,9 @@
+{
+  "name": "Technical Report Section",
+  "description": "Write a technical report section",
+  "category": "reporting",
+  "variables": [
+    "section:Methodology"
+  ],
+  "content": "Write the \"{section:Methodology}\" section of the technical report.\n\n**Example sections :**\n\n### Methodology\n- Testing phases (recon, scanning, exploitation, post-exploit)\n- Tools used\n- Limitations and exclusions\n\n### Attack Narrative\n- Chronological timeline\n- Complete attack path\n- Annotated screenshots\n\n### Detailed Findings\n- Findings sorted by severity\n- Complete technical evidence\n- Reproduction steps\n\n### Remediation Roadmap\n- Immediate actions (0-7 days)\n- Short term (1-4 weeks)\n- Medium term (1-3 months)\n- Long term (structural improvements)\n\n### Appendices\n- Raw scans\n- Exploitation logs\n- Recommended configurations\n\n---\n\nStyle: technical but accessible, with enough context for reproduction."
+}

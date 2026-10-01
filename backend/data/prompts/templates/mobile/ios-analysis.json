@@ -1,0 +1,9 @@
+{
+  "name": "iOS App Analysis",
+  "description": "iOS application security analysis",
+  "category": "mobile",
+  "variables": [
+    "app_name"
+  ],
+  "content": "Analyze the iOS application {app_name}.\n\n**Binary extraction (jailbreak required) :**\n```bash\n# With frida-ios-dump\nfrida-ios-dump -U {app_name}\n\n# With Clutch\nClutch -d {app_name}\n```\n\n**Static analysis :**\n```bash\n# Decompilation\nclass-dump -H App.decrypted -o headers/\n\n# Strings\nstrings App.decrypted | grep -i \"api\\|secret\\|password\"\n\n# Hopper/IDA for in-depth analysis\n```\n\n**Items to check :**\n1. Info.plist : ATS, URL schemes\n2. Keychain items\n3. Data Protection class\n4. Jailbreak detection\n5. SSL pinning\n\n**Frida :**\n```javascript\n// Bypass jailbreak detection\nfrida -U -f {app_name} -l jailbreak-bypass.js\n\n// Dump keychain\nobjection -g {app_name} explore\n> ios keychain dump\n```\n\nTools : Frida, objection, Hopper, class-dump, ipatool"
+}

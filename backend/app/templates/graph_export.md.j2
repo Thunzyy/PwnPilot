@@ -1,0 +1,51 @@
+# Attack Path: {{ node_path }}
+
+Project: **{{ project_name }}**
+
+{% if ai_summary %}
+## AI Summary
+
+{{ ai_summary }}
+
+{% endif %}
+{% for section in sections %}
+## {{ loop.index }}. {{ section.node.label }}
+
+- Type: `{{ section.node.type }}`
+- Sequence index: `{{ section.node.sequence_index }}`
+{% if section.transition_label %}
+- Transition from previous node: `{{ section.transition_label }}`
+{% endif %}
+
+{% if section.summary_items %}
+### Node Summary
+{% for item in section.summary_items %}
+- **{{ item.label }}:** {{ item.value }}
+{% endfor %}
+{% endif %}
+
+{% if section.terminal_entries %}
+### Terminal Output
+{% for entry in section.terminal_entries %}
+#### {{ entry.command }}
+```text
+{{ entry.output }}
+```
+{% endfor %}
+{% endif %}
+
+{% if section.notes %}
+### Notes
+{% for item in section.notes %}
+- **{{ item.title }}:** {{ item.content }}
+{% endfor %}
+{% endif %}
+
+{% if section.ai_context %}
+### AI Context
+{% for item in section.ai_context %}
+- **{{ item.title }}:** {{ item.content }}
+{% endfor %}
+{% endif %}
+
+{% endfor %}

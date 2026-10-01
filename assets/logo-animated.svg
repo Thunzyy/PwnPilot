@@ -1,0 +1,41 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+<title id="title">PwnPilot</title>
+<desc id="desc">The PwnPilot spider emblem, with a slow cyan and violet pulse.</desc>
+<style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}svg&gt;g{animation:pulse 5s ease-in-out infinite}@media(prefers-reduced-motion:reduce){svg&gt;g{animation:none}}</style>
+  <defs>
+
+    <linearGradient id="neonGradient" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="0" y2="450">
+      <stop offset="0%" stop-color="#00FFFF" />
+      <stop offset="100%" stop-color="#FF00FF" />
+    </linearGradient>
+
+
+    <mask id="eyeMask">
+      <rect width="100%" height="100%" fill="white" />
+
+      <g transform="translate(250, 250) scale(0.9) translate(-250, -250)">
+        <circle cx="264" cy="308" r="6.5" fill="black" />
+        <circle cx="236" cy="308" r="6.5" fill="black" />
+      </g>
+    </mask>
+  </defs>
+
+
+
+
+  <g transform="translate(250, 250) scale(0.9) translate(-250, -250)" mask="url(#eyeMask)">
+
+    <g fill="url(#neonGradient)" fill-rule="evenodd">
+    <path d="M 250 20 C 350 20 370 140 360 180 C 340 240 290 260 270 270 C 290 240 330 220 335 175 C 345 110 290 40 250 40 Z M 250 20 C 150 20 130 140 140 180 C 160 240 210 260 230 270 C 210 240 170 220 165 175 C 155 110 210 40 250 40 Z" />
+    <path d="M 250 55 C 290 55 310 90 310 130 C 310 160 300 185 295 200 C 280 170 260 160 270 145 C 260 165 255 190 250 220 Z M 250 55 C 210 55 190 90 190 130 C 190 160 200 185 205 200 C 220 170 240 160 230 145 C 240 165 245 190 250 220 Z" />
+    <path d="M 250 260 L 275 230 C 280 250 285 270 295 285 L 305 305 L 280 330 L 250 340 L 250 260 M 250 260 L 225 230 C 220 250 215 270 205 285 L 195 305 L 220 330 L 250 340 L 250 260" />
+    <path d="M 252 335 L 275 330 Q 285 380 260 450 Q 275 410 265 370 L 250 360 Z M 248 335 L 225 330 Q 215 380 240 450 Q 225 410 235 370 L 250 360 Z" />
+    <path d="M 270 325 C 310 330 335 330 340 340 L 345 330 C 340 350 335 410 325 465 C 335 410 325 350 320 345 C 295 335 280 330 265 330 Z M 230 325 C 190 330 165 330 160 340 L 155 330 C 160 350 165 410 175 465 C 165 410 175 350 180 345 C 205 335 220 330 235 330 Z" />
+    <path d="M 285 300 C 340 290 370 290 380 300 L 395 285 C 380 330 360 420 350 480 C 370 420 370 330 360 310 C 340 305 300 305 275 310 Z M 215 300 C 160 290 130 290 120 300 L 105 285 C 120 330 140 420 150 480 C 130 420 130 330 140 310 C 160 305 200 305 225 310 Z" />
+    <path d="M 290 285 C 350 260 400 240 410 250 L 425 230 C 410 280 400 390 400 450 C 420 390 410 280 390 265 C 360 275 310 295 275 295 Z M 210 285 C 150 260 100 240 90 250 L 75 230 C 90 280 100 390 100 450 C 80 390 90 280 110 265 C 140 275 190 295 225 295 Z" />
+    <path d="M 280 270 C 330 230 420 160 435 170 L 455 145 C 430 200 450 320 460 390 C 440 320 430 230 410 200 C 360 220 300 270 265 280 Z M 220 270 C 170 230 80 160 65 170 L 45 145 C 70 200 50 320 40 390 C 60 320 70 230 90 200 C 140 220 200 270 235 280 Z" />
+
+    </g>
+
+  </g>
+</svg>

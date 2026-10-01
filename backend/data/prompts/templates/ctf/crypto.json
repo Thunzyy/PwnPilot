@@ -1,0 +1,9 @@
+{
+  "name": "Crypto Challenge",
+  "description": "CTF cryptography challenge assistance",
+  "category": "ctf",
+  "variables": [
+    "challenge_data"
+  ],
+  "content": "Analyze this cryptography challenge :\n\n{challenge_data}\n\n**Analysis checklist :**\n\n1. **Identification**\n   - Encoding type ? (Base64, hex, ASCII)\n   - Classical cipher ? (Caesar, Vigenère, XOR)\n   - Modern cryptography ? (RSA, AES, DES)\n   - Hash ? (MD5, SHA, bcrypt)\n\n2. **Tools to use**\n   - CyberChef (encodings, XOR)\n   - RsaCtfTool (weak RSA)\n   - hashcat/john (cracking)\n   - SageMath (maths)\n\n3. **Common attacks**\n   - RSA : small e, common modulus, Wiener, Fermat\n   - AES : ECB mode, padding oracle, IV reuse\n   - XOR : known plaintext, frequency analysis\n\n**Suggested CyberChef recipe :**\n```\n[Identify the encoding and suggest a recipe]\n```\n\n**Python code if needed :**\n```python\nfrom Crypto.Util.number import *\n# ...\n```"
+}

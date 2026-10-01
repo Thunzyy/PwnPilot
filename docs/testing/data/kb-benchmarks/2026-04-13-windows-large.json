@@ -1,0 +1,41 @@
+{
+  "scenario": "large",
+  "document_count": 1000,
+  "folder_count": 20,
+  "iterations": 3,
+  "vault_root": "C:\\Users\\operator\\AppData\\Local\\Temp\\kb-benchmark-ywodmgif\\vault",
+  "source_id": "c2468900-2a3f-48bf-8cb2-cac448ac1ef1",
+  "operations": {
+    "index_cold": {
+      "count": 1,
+      "min_duration_ms": 5517,
+      "max_duration_ms": 5517,
+      "avg_duration_ms": 5517
+    },
+    "index_warm": {
+      "count": 1,
+      "min_duration_ms": 135,
+      "max_duration_ms": 135,
+      "avg_duration_ms": 135
+    },
+    "search": {
+      "count": 3,
+      "min_duration_ms": 13.38,
+      "max_duration_ms": 13.82,
+      "avg_duration_ms": 13.63
+    },
+    "tree": {
+      "count": 3,
+      "min_duration_ms": 5.0,
+      "max_duration_ms": 14.05,
+      "avg_duration_ms": 8.17
+    },
+    "document_open": {
+      "count": 3,
+      "min_duration_ms": 1.42,
+      "max_duration_ms": 3.0,
+      "avg_duration_ms": 1.96
+    }
+  },
+  "generated_at": "2026-04-13T08:44:49.761172+00:00"
+}

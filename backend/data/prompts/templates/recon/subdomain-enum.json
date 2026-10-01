@@ -1,0 +1,9 @@
+{
+  "name": "Subdomain Enumeration",
+  "description": "Comprehensive subdomain enumeration",
+  "category": "recon",
+  "variables": [
+    "domain"
+  ],
+  "content": "Enumerate all subdomains of {domain}.\n\nMethods to use :\n1. DNS brute force : `subfinder -d {domain} -all`\n2. Certificate transparency : `crt.sh, certspotter`\n3. DNS zone transfer : `dig axfr {domain} @ns`\n4. Permutations : `dnsgen, altdns`\n5. Archives and search engines\n\nFor each discovered subdomain :\n- Resolve its IP address\n- Check whether it is active (httpx)\n- Identify the service\n\nSuggested commands :\n```bash\nsubfinder -d {domain} -all -o subs.txt\ncat subs.txt | httpx -silent -title -status-code -tech-detect\n```"
+}

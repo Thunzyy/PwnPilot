@@ -1,0 +1,10 @@
+{
+  "name": "OSINT Recon",
+  "description": "Public information gathering about a target",
+  "category": "recon",
+  "variables": [
+    "target",
+    "scope:full"
+  ],
+  "content": "Perform OSINT reconnaissance on {target}.\n\nScope: {scope:full}\n\nResearch :\n1. WHOIS and domain history\n2. DNS records (A, AAAA, MX, TXT, NS)\n3. SSL/TLS certificates (crt.sh)\n4. Web archives (Wayback Machine)\n5. Social networks and professional profiles\n6. Data leaks (dehashed, haveibeenpwned)\n7. Documents and metadata (Google dorks)\n8. Detected technologies (Wappalyzer, BuiltWith)\n\nExpected format: summary table with sources"
+}

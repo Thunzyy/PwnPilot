@@ -1,0 +1,41 @@
+{
+  "scenario": "medium",
+  "document_count": 250,
+  "folder_count": 10,
+  "iterations": 3,
+  "vault_root": "C:\\Users\\operator\\AppData\\Local\\Temp\\kb-benchmark-2m32hcam\\vault",
+  "source_id": "7bec16c6-09f0-4bab-9cbe-330a01585250",
+  "operations": {
+    "index_cold": {
+      "count": 1,
+      "min_duration_ms": 2412,
+      "max_duration_ms": 2412,
+      "avg_duration_ms": 2412
+    },
+    "index_warm": {
+      "count": 1,
+      "min_duration_ms": 62,
+      "max_duration_ms": 62,
+      "avg_duration_ms": 62
+    },
+    "search": {
+      "count": 3,
+      "min_duration_ms": 6.21,
+      "max_duration_ms": 7.01,
+      "avg_duration_ms": 6.55
+    },
+    "tree": {
+      "count": 3,
+      "min_duration_ms": 3.53,
+      "max_duration_ms": 3.88,
+      "avg_duration_ms": 3.66
+    },
+    "document_open": {
+      "count": 3,
+      "min_duration_ms": 2.83,
+      "max_duration_ms": 5.51,
+      "avg_duration_ms": 4.12
+    }
+  },
+  "generated_at": "2026-04-11T22:46:07.645026+00:00"
+}

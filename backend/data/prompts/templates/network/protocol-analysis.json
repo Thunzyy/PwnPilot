@@ -1,0 +1,9 @@
+{
+  "name": "Protocol Analysis",
+  "description": "Network capture analysis",
+  "category": "network",
+  "variables": [
+    "pcap_file"
+  ],
+  "content": "Analyze the network capture {pcap_file}.\n\n**Wireshark/tshark commands :**\n```bash\n# General statistics\ntshark -r {pcap_file} -q -z io,stat,1\n\n# Conversations\ntshark -r {pcap_file} -q -z conv,tcp\n\n# Extract HTTP credentials\ntshark -r {pcap_file} -Y 'http.request.method == POST' -T fields -e http.file_data\n\n# DNS queries\ntshark -r {pcap_file} -Y 'dns.qry.name' -T fields -e dns.qry.name\n```\n\n**Look for :**\n- Cleartext credentials (HTTP, FTP, Telnet)\n- Unencrypted sessions\n- Suspicious communications\n- Data exfiltration\n- Malware C2\n\n**File extraction :**\n```bash\nbinwalk -e {pcap_file}\nforemost -i {pcap_file}\n```"
+}

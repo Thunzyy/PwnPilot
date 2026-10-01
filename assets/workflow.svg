@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+<title id="title">PwnPilot workflow</title><desc id="desc">Define a project, work with commands and a terminal, connect evidence in the graph and notes, then build a write-up. Data is stored in local SQLite and Markdown files. AI providers are optional.</desc>
+<rect width="1200" height="260" rx="16" fill="#0b1018"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#f4f7fc"><text x="40" y="43" font-size="14" fill="#44d8e8" letter-spacing="3">FROM ACTIVITY TO EVIDENCE</text>
+<g fill="none" stroke="#334155"><path d="M40 67H1160"/><path d="M264 129H330M550 129H616M836 129H902" stroke="#44d8e8" stroke-width="2"/><path d="m322 123 8 6-8 6m278-12 8 6-8 6m278-12 8 6-8 6"/></g>
+<text x="40" y="105" font-size="12" fill="#44d8e8">01 / SCOPE</text><text x="40" y="142" font-size="26">Project</text><text x="40" y="173" font-size="15" fill="#aebbd0">Targets and context</text>
+<text x="340" y="105" font-size="12" fill="#44d8e8">02 / WORK</text><text x="340" y="142" font-size="26">Workspace</text><text x="340" y="173" font-size="15" fill="#aebbd0">Terminal and commands</text>
+<text x="626" y="105" font-size="12" fill="#44d8e8">03 / CONNECT</text><text x="626" y="142" font-size="26">Evidence</text><text x="626" y="173" font-size="15" fill="#aebbd0">Graph, timeline and notes</text>
+<text x="912" y="105" font-size="12" fill="#44d8e8">04 / EXPLAIN</text><text x="912" y="142" font-size="26">Write-up</text><text x="912" y="173" font-size="15" fill="#aebbd0">Reports and exports</text>
+<path d="M40 204H1160" stroke="#334155"/><text x="40" y="236" font-size="14" fill="#aebbd0">Local SQLite + Markdown</text><text x="1160" y="236" font-size="14" fill="#aebbd0" text-anchor="end">Optional AI assistance across the workspace</text></g></svg>

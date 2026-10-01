@@ -1,0 +1,9 @@
+{
+  "name": "Tech Stack Detection",
+  "description": "Application technology stack identification",
+  "category": "recon",
+  "variables": [
+    "url"
+  ],
+  "content": "Identify the complete technology stack of {url}.\n\nElements to identify :\n1. Web server (Apache, Nginx, IIS)\n2. Backend language (PHP, Python, Java, Node.js)\n3. Framework (Laravel, Django, Spring, Express)\n4. CMS (WordPress, Drupal, Joomla)\n5. Frontend (React, Vue, Angular)\n6. Likely database\n7. CDN and WAF\n8. Third-party services (analytics, APIs)\n\nCommands :\n```bash\nwhatweb {url}\nhttpx -u {url} -title -status-code -tech-detect -server\ncurl -I {url}\n```\n\nSuggest vulnerabilities specific to this stack."
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Android App Analysis",
+  "description": "Android application security analysis",
+  "category": "mobile",
+  "variables": [
+    "apk_path"
+  ],
+  "content": "Analyze the Android application {apk_path}.\n\n**Static analysis :**\n```bash\n# Decompilation\napktool d {apk_path} -o output/\njadx -d output_java/ {apk_path}\n\n# Strings and secrets\nstrings {apk_path} | grep -i api\ngrep -r \"password\\|secret\\|key\" output/\n```\n\n**Items to check :**\n1. AndroidManifest.xml : permissions, exported components\n2. Hardcoded secrets in the code\n3. SSL certificate pinning\n4. Root detection\n5. Local storage (SharedPrefs, SQLite)\n\n**Dynamic analysis (Frida) :**\n```javascript\n// Bypass SSL pinning\nfrida -U -f com.app.name -l ssl-bypass.js\n\n// Bypass root detection\nfrida -U -f com.app.name -l root-bypass.js\n```\n\n**MobSF (automated) :**\n```bash\ndocker run -p 8000:8000 opensecurity/mobile-security-framework-mobsf\n```\n\nTools : jadx, apktool, Frida, objection, MobSF"
+}

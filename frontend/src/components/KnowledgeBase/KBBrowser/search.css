@@ -1,0 +1,9 @@
+/* Search snippet highlight -- marker-pen style for dark theme.
+ * Styles the <mark> tags from FTS5 snippets rendered via DOMPurify.
+ */
+.search-snippet mark {
+  background-color: rgba(250, 204, 21, 0.25);
+  color: #e2e8f0;
+  padding: 0 2px;
+  border-radius: 2px;
+}

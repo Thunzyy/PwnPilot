@@ -1,0 +1,9 @@
+{
+  "name": "Mobile API Reverse",
+  "description": "Reverse engineering mobile API calls",
+  "category": "mobile",
+  "variables": [
+    "app_name"
+  ],
+  "content": "Analyze the API calls made by {app_name}.\n\n**Traffic interception :**\n```bash\n# Configure the proxy (Burp/mitmproxy)\n# Android: Settings > WiFi > Proxy\n# iOS: Settings > WiFi > HTTP Proxy\n\n# Install the CA certificate\n```\n\n**Bypass SSL Pinning :**\n\n*Android (Frida) :*\n```javascript\n// Universal SSL Pinning Bypass\nfrida -U -f com.app.name -l ssl-pinning-bypass.js --no-pause\n```\n\n*iOS (Frida) :*\n```javascript\nobjection -g {app_name} explore\n> ios sslpinning disable\n```\n\n**Request analysis :**\n1. Authentication (tokens, headers)\n2. Endpoints and parameters\n3. Transmitted sensitive data\n4. Signatures and encryption\n\n**Reproducing calls :**\n```bash\ncurl -X POST 'https://api.app.com/endpoint' \\\n  -H 'Authorization: Bearer TOKEN' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"param\": \"value\"}'\n```\n\nDetermine whether server-side checks can be bypassed."
+}

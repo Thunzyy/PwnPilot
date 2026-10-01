@@ -1,0 +1,116 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+data/*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.coverage
+htmlcov/
+frontend/test-results/
+frontend/playwright-report/
+.pytest_cache/
+backend/.pytest-runtime/
+backend/.pytest-tmp/
+backend/.codex-tmp/
+backend/data/prompts/user/
+
+# Misc
+*.bak
+*.tmp
+.worktrees/
+
+# AI tools
+.claude/
+.codex/
+.codex-tmp/
+.cursor/
+.aider/
+.copilot/
+.codeium/
+.continue/
+.supermaven/
+.tabnine/
+.planning/
+CLAUDE.local.md
+
+# Generated docs
+docs/.generated.*
+
+# Local diagnostics and publication tooling
+*.err
+*.out
+*_output.txt
+backend/test_failure.txt
+.txt
+.codex-capture.mjs
+
+# Local agent workflows and historical working notes
+.agent/
+.codex
+CLAUDE.md
+BLUEPRINT.md
+compound.config.json
+tasks/
+docs/plans/
+docs/guides/
+scripts/compound/
+scripts/daily-compound-review.sh
+scripts/gsd-to-ralph.sh
+scripts/ralph*
+scripts/setup-cron.sh
+
+# Private planning and assistant working material
+[Rr][Oo][Aa][Dd][Mm][Aa][Pp]*.md
+AGENTS.md
+AGENTS.local.md
+GEMINI.md
+.cursorrules
+.clinerules
+.windsurfrules
+.gemini/
+.serena/
+.opencode/
+.bmad/
+_bmad/
+_bmad-output/
+.specify/
+docs/private/
+docs/internal/
+docs/testing/validation.md
+docs/features/_TEMPLATE.md
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/

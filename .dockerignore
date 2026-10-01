@@ -1,0 +1,59 @@
+# Docker ignore file - mirrors .gitignore + .git/
+
+# Git
+.git/
+.gitignore
+
+# Environment
+.env
+.env.*
+.env.local
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Database (local dev only)
+*.db
+*.sqlite
+data/*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Misc
+*.bak
+*.tmp
+*.log
+
+# Claude local files
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Documentation (keep in image for reference)
+# docs/
+
+# Development files
+test_failure.txt
+workspace/

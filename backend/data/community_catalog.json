@@ -1,0 +1,75 @@
+[
+  {
+    "slug": "hacktricks",
+    "name": "HackTricks",
+    "url": "https://github.com/HackTricks-wiki/hacktricks.git",
+    "description": "Pentesting tricks, techniques, and CTF writeups",
+    "recommended_filters": [
+      "generic-methodologies-and-resources",
+      "linux-hardening",
+      "network-services-pentesting",
+      "pentesting-web",
+      "windows-hardening"
+    ],
+    "read_only": true,
+    "clone_depth": 1
+  },
+  {
+    "slug": "payloads-all-the-things",
+    "name": "PayloadsAllTheThings",
+    "url": "https://github.com/swisskyrepo/PayloadsAllTheThings.git",
+    "description": "Useful payloads and bypasses for web application security",
+    "recommended_filters": [],
+    "read_only": true,
+    "clone_depth": 1
+  },
+  {
+    "slug": "seclists",
+    "name": "SecLists",
+    "url": "https://github.com/danielmiessler/SecLists.git",
+    "description": "Security tester's companion — usernames, passwords, URLs, fuzzing payloads",
+    "recommended_filters": [
+      "Discovery",
+      "Fuzzing",
+      "Passwords",
+      "Usernames"
+    ],
+    "read_only": true,
+    "clone_depth": 1
+  },
+  {
+    "slug": "owasp-cheatsheets",
+    "name": "OWASP Cheat Sheet Series",
+    "url": "https://github.com/OWASP/CheatSheetSeries.git",
+    "description": "Concise security topic cheat sheets",
+    "recommended_filters": [
+      "cheatsheets"
+    ],
+    "read_only": true,
+    "clone_depth": 1
+  },
+  {
+    "slug": "gtfobins",
+    "name": "GTFOBins",
+    "url": "https://github.com/GTFOBins/GTFOBins.github.io.git",
+    "description": "Curated list of Unix binaries that can be used to bypass local security restrictions",
+    "recommended_filters": [
+      "_gtfobins"
+    ],
+    "read_only": true,
+    "clone_depth": 1
+  },
+  {
+    "slug": "hacktricks-cloud",
+    "name": "HackTricks Cloud",
+    "url": "https://github.com/HackTricks-wiki/hacktricks-cloud.git",
+    "description": "Cloud security pentesting — AWS, Azure, GCP exploitation techniques",
+    "recommended_filters": [
+      "pentesting-cloud/aws-security",
+      "pentesting-cloud/azure-security",
+      "pentesting-cloud/gcp-security"
+    ],
+    "read_only": true,
+    "clone_depth": 1
+  }
+]

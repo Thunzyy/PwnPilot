@@ -1,0 +1,137 @@
+/* PrintStyles.css -- @media print rules for PDF export (PDF-01).
+ * Hides navigation chrome and adapts the dark theme to a light,
+ * print-friendly palette. Imported in MarkdownViewer.tsx. */
+
+@media print {
+  /* Hide all navigation chrome */
+  [data-panel-group],
+  [role="tablist"],
+  .kb-nav-bar,
+  .inline-title,
+  .tag-filter,
+  .backlink-panel,
+  .used-in-panel,
+  .mitre-tag-input,
+  .code-block-copy,
+  .kb-sidebar {
+    display: none !important;
+  }
+
+  /* White background for print */
+  body,
+  .markdown-viewer,
+  article {
+    background: white !important;
+    color: #1a1a1a !important;
+    max-width: 100% !important;
+  }
+
+  /* Override heading colors */
+  .markdown-viewer h1,
+  .markdown-viewer h2,
+  .markdown-viewer h3,
+  .markdown-viewer h4,
+  .markdown-viewer h5,
+  .markdown-viewer h6 {
+    color: #1a1a1a !important;
+  }
+
+  /* Override text colors */
+  .markdown-viewer p,
+  .markdown-viewer li,
+  .markdown-viewer td,
+  .markdown-viewer th,
+  .markdown-viewer dd,
+  .markdown-viewer dt,
+  .markdown-viewer blockquote,
+  .markdown-viewer blockquote p {
+    color: #333 !important;
+  }
+
+  /* Links show URL for print */
+  .markdown-viewer a {
+    color: #1a56db !important;
+  }
+
+  /* Code blocks: light background for print */
+  .markdown-viewer pre,
+  .code-block-wrapper {
+    background: #f5f5f5 !important;
+    border-color: #ddd !important;
+  }
+
+  .markdown-viewer pre code,
+  .code-block-wrapper code {
+    color: #333 !important;
+  }
+
+  /* Syntax highlighting -- override dark theme for print */
+  .hljs { background: #f5f5f5 !important; color: #333 !important; }
+  .hljs-keyword { color: #d73a49 !important; }
+  .hljs-string { color: #032f62 !important; }
+  .hljs-comment { color: #6a737d !important; }
+  .hljs-number { color: #005cc5 !important; }
+  .hljs-function { color: #6f42c1 !important; }
+  .hljs-title { color: #6f42c1 !important; }
+  .hljs-built_in { color: #e36209 !important; }
+  .hljs-literal { color: #005cc5 !important; }
+  .hljs-type { color: #d73a49 !important; }
+  .hljs-params { color: #24292e !important; }
+  .hljs-attr { color: #005cc5 !important; }
+
+  /* Code block header: light for print */
+  .code-block-header {
+    background-color: #eee !important;
+    border-color: #ddd !important;
+  }
+
+  .code-block-lang {
+    color: #666 !important;
+  }
+
+  .code-block-gutter {
+    border-color: #ddd !important;
+    color: #999 !important;
+  }
+
+  /* Tables: readable borders */
+  .markdown-viewer table {
+    display: table !important;
+  }
+
+  .markdown-viewer th,
+  .markdown-viewer td {
+    border-color: #ccc !important;
+  }
+
+  .markdown-viewer thead {
+    background-color: #f0f0f0 !important;
+  }
+
+  .markdown-viewer tbody tr:nth-child(even) {
+    background-color: #fafafa !important;
+  }
+
+  /* Inline code: light for print */
+  .markdown-viewer :not(pre) > code {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+  }
+
+  /* Document title at top of printed page */
+  .print-doc-title {
+    display: block !important;
+    color: #1a1a1a !important;
+    font-size: 20pt !important;
+    font-weight: 700 !important;
+    margin-bottom: 12pt !important;
+    border-bottom: 2pt solid #333 !important;
+    padding-bottom: 6pt !important;
+  }
+
+  /* Force color printing for syntax highlighting */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

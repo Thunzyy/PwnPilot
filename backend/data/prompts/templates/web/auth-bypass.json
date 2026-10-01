@@ -1,0 +1,9 @@
+{
+  "name": "Authentication Bypass",
+  "description": "Authentication bypass techniques",
+  "category": "web",
+  "variables": [
+    "url"
+  ],
+  "content": "Test authentication weaknesses at {url}.\n\nTechniques to try :\n\n1. **Default credentials**\n   - admin:admin, admin:password, root:root\n\n2. **SQL injection auth bypass**\n   - `admin'--`, `' OR 1=1--`\n\n3. **JWT attacks**\n   - Algorithm confusion (none, HS256→RS256)\n   - Weak secret brute force\n   - Kid injection\n\n4. **Session attacks**\n   - Session fixation\n   - Predictable session IDs\n\n5. **Password reset flaws**\n   - Token leakage, host header injection\n\n6. **OAuth/OIDC**\n   - Redirect URI manipulation\n   - State parameter missing\n\n7. **2FA bypass**\n   - Response manipulation\n   - Backup codes brute force\n\nTools : Burp Suite, jwt_tool, hydra"
+}

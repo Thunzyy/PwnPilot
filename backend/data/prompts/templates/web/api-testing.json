@@ -1,0 +1,9 @@
+{
+  "name": "API Security Testing",
+  "description": "REST and GraphQL API security testing",
+  "category": "web",
+  "variables": [
+    "base_url"
+  ],
+  "content": "Test the security of the API at {base_url}.\n\n**Reconnaissance :**\n- Documentation (Swagger, OpenAPI)\n- Endpoints discovery : `/api`, `/v1`, `/graphql`\n- HTTP methods (GET, POST, PUT, DELETE, PATCH)\n\n**Tests OWASP API Top 10 :**\n\n1. **Broken Object Level Authorization (BOLA/IDOR)**\n   - Modify IDs in requests\n\n2. **Broken Authentication**\n   - Weak tokens, expiration, refresh\n\n3. **Excessive Data Exposure**\n   - Sensitive data in responses\n\n4. **Rate Limiting**\n   - Is brute force possible ?\n\n5. **Mass Assignment**\n   - Add unexpected fields\n\n**GraphQL-specific checks :**\n```graphql\n{__schema{types{name,fields{name}}}}\n```\n\nTools : Postman, Burp Suite, GraphQL Voyager"
+}

@@ -1,0 +1,8 @@
+# {{ report.title }}
+
+{% for section in sections %}
+## {{ section.title }}
+
+{{ section.content_md }}
+
+{% endfor %}

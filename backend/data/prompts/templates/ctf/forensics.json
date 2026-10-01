@@ -1,0 +1,10 @@
+{
+  "name": "Forensics Challenge",
+  "description": "CTF forensics challenge assistance",
+  "category": "ctf",
+  "variables": [
+    "file_type:unknown",
+    "file_path"
+  ],
+  "content": "Analyze this forensic file : {file_path}\nAssumed type : {file_type:unknown}\n\n**Identification :**\n```bash\nfile {file_path}\nxxd {file_path} | head\nbinwalk {file_path}\nexiftool {file_path}\n```\n\n**By file type :**\n\n**Image :**\n```bash\nsteghide extract -sf image.jpg\nzsteg image.png\nstegsolve  # GUI\nforemost -i image.jpg\n```\n\n**PDF :**\n```bash\npdftotext file.pdf\npdf-parser.py file.pdf\npeepdf file.pdf\n```\n\n**Archive :**\n```bash\n7z x file.zip\nbinwalk -e file.bin\nforemost -i file.raw\n```\n\n**Memory dump :**\n```bash\nvol.py -f dump.raw imageinfo\nvol.py -f dump.raw --profile=X pslist\nvol.py -f dump.raw --profile=X filescan\n```\n\n**Disk image :**\n```bash\nmmls image.dd\nfls -r image.dd\nautopsy  # GUI\n```\n\n**Advanced steganography :**\n- LSB encoding\n- Whitespace\n- Audio spectrogram"
+}

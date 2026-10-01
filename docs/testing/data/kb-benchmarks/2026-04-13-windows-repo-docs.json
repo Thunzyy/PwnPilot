@@ -1,0 +1,43 @@
+{
+  "dataset_mode": "real",
+  "dataset_name": "repo-docs",
+  "scenario": "real-vault",
+  "document_count": 71,
+  "folder_count": 7,
+  "iterations": 3,
+  "vault_root": "<redacted:repo-docs>",
+  "source_id": "06ec5b19-4987-467f-8481-a96b210701f7",
+  "operations": {
+    "index_cold": {
+      "count": 1,
+      "min_duration_ms": 40,
+      "max_duration_ms": 40,
+      "avg_duration_ms": 40
+    },
+    "index_warm": {
+      "count": 1,
+      "min_duration_ms": 18,
+      "max_duration_ms": 18,
+      "avg_duration_ms": 18
+    },
+    "search": {
+      "count": 3,
+      "min_duration_ms": 2.06,
+      "max_duration_ms": 2.33,
+      "avg_duration_ms": 2.18
+    },
+    "tree": {
+      "count": 3,
+      "min_duration_ms": 0.75,
+      "max_duration_ms": 1.12,
+      "avg_duration_ms": 0.89
+    },
+    "document_open": {
+      "count": 3,
+      "min_duration_ms": 1.19,
+      "max_duration_ms": 2.68,
+      "avg_duration_ms": 1.7
+    }
+  },
+  "generated_at": "2026-04-13T09:12:21.008005+00:00"
+}

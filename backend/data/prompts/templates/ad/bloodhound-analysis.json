@@ -1,0 +1,10 @@
+{
+  "name": "BloodHound Analysis",
+  "description": "BloodHound data analysis",
+  "category": "ad",
+  "variables": [
+    "start_node",
+    "target:Domain Admins"
+  ],
+  "content": "Analyze the attack path from {start_node} to {target:Domain Admins}.\n\n**Useful Cypher queries :**\n\n```cypher\n// Shortest path to Domain Admins\nMATCH p=shortestPath((n)-[*1..]->(g:Group {name:'DOMAIN ADMINS@DOMAIN.LOCAL'})) \nWHERE n.name =~ '(?i){start_node}.*' RETURN p\n\n// Kerberoastable users\nMATCH (u:User {hasspn:true}) RETURN u.name, u.serviceprincipalnames\n\n// Unconstrained delegation\nMATCH (c:Computer {unconstraineddelegation:true}) RETURN c.name\n\n// Users with DCSync rights\nMATCH (n)-[:MemberOf|GetChanges|GetChangesAll*1..]->(d:Domain) RETURN n.name\n```\n\n**Common attack paths :**\n1. GenericAll/GenericWrite → Reset password\n2. WriteDACL → Grant DCSync\n3. AddMember → Add to privileged group\n4. ForceChangePassword → Change user password\n\nIdentify quick wins and the shortest paths."
+}

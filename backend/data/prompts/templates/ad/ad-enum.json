@@ -1,0 +1,10 @@
+{
+  "name": "AD Enumeration",
+  "description": "Active Directory enumeration",
+  "category": "ad",
+  "variables": [
+    "domain",
+    "dc_ip"
+  ],
+  "content": "Enumerate the domain {domain} (DC: {dc_ip}).\n\n**Without credentials :**\n```bash\n# Null session\nnetexec smb {dc_ip} -u '' -p '' --users\nnetexec smb {dc_ip} -u '' -p '' --groups\n\n# LDAP anonymous\nldapsearch -x -H ldap://{dc_ip} -b \"DC=${domain//./,DC=}\"\n```\n\n**With credentials :**\n```bash\n# Users and groups\nnetexec smb {dc_ip} -u USER -p PASS --users\nnetexec ldap {dc_ip} -u USER -p PASS -M get-desc-users\n\n# BloodHound collection\nbloodhound-python -u USER -p PASS -d {domain} -dc {dc_ip} -c all\n```\n\n**Key information :**\n- Domain Admins members\n- Kerberoastable accounts\n- AS-REP roastable accounts\n- Machines with unconstrained delegation\n- GPOs and ACLs"
+}

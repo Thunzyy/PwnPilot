@@ -1,0 +1,10 @@
+{
+  "name": "PWN Challenge",
+  "description": "CTF binary exploitation challenge assistance",
+  "category": "ctf",
+  "variables": [
+    "binary_info",
+    "protections"
+  ],
+  "content": "Analyze this PWN challenge :\n\n{binary_info}\n\nProtections : {protections}\n\n**Checklist :**\n\n1. **Reconnaissance**\n```bash\nchecksec --file=binary\nfile binary\n./binary  # Normal behavior\n```\n\n2. **Common vulnerabilities**\n   - Buffer overflow (stack/heap)\n   - Format string\n   - Use-after-free\n   - Integer overflow\n   - Race condition\n\n3. **Exploitation by protection type**\n\n| Protection | Bypass |\n|------------|--------|\n| No PIE | Fixed addresses |\n| No canary | Direct buffer overflow |\n| NX | ROP/ret2libc |\n| ASLR | Leak + calculate |\n| Full RELRO | Overwrite elsewhere |\n\n4. **Template pwntools**\n```python\nfrom pwn import *\n\nelf = ELF('./binary')\np = process('./binary')\n# p = remote('host', port)\n\npayload = b'A' * offset\npayload += p64(elf.symbols['win'])  # or ROP chain\n\np.sendline(payload)\np.interactive()\n```\n\nWhat vulnerability type did you identify?"
+}

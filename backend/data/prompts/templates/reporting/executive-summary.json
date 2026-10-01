@@ -1,0 +1,11 @@
+{
+  "name": "Executive Summary",
+  "description": "Write an executive summary",
+  "category": "reporting",
+  "variables": [
+    "client_name",
+    "scope",
+    "test_type:External Penetration Test"
+  ],
+  "content": "Write an executive summary for {client_name}.\n\nTest type : {test_type:External Penetration Test}\nScope : {scope}\n\n**Expected structure :**\n\n## Executive Summary\n\n### Context\n[Client], [date], [test type], [objective]\n\n### Scope\n{scope}\n\n### Overall results\n\n| Severity | Count |\n|----------|--------|\n| Critical | X |\n| High | X |\n| Medium | X |\n| Low | X |\n| Info | X |\n\n### Main risks\n1. [Major business risk #1]\n2. [Major business risk #2]\n3. [Major business risk #3]\n\n### Priority recommendations\n1. [Immediate action]\n2. [Short term]\n3. [Medium term]\n\n### Conclusion\n[Overall security posture assessment]\n\n---\n\nTone: professional, business-focused, without excessive technical jargon."
+}

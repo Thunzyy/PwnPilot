@@ -1,0 +1,9 @@
+{
+  "name": "Reversing Challenge",
+  "description": "CTF reverse engineering assistance",
+  "category": "ctf",
+  "variables": [
+    "binary_info"
+  ],
+  "content": "Analyze this reverse engineering challenge :\n\n{binary_info}\n\n**Analysis steps :**\n\n1. **Identification**\n```bash\nfile binary\nstrings binary | grep -i flag\nchecksec --file=binary\n```\n\n2. **Static analysis**\n   - Ghidra : decompilation\n   - IDA : disassembly\n   - radare2 : quick analysis\n\n3. **Points of interest**\n   - main() and validation functions\n   - Interesting strings\n   - String comparisons\n   - XOR/cryptographic operations\n\n4. **Dynamic analysis**\n```bash\nstrace ./binary\nltrace ./binary\ngdb ./binary\n```\n\n**Anti-debug bypass :**\n```c\n// ptrace check\nset $eax = 0\n\n// time check\ncatch syscall time\n```\n\n**Keygen / solve script :**\n```python\n# Reverse engineer the validation algorithm\n```\n\nWhat binary format and architecture are involved?"
+}
