@@ -71,6 +71,92 @@ sequenceDiagram
 
 SQLite stores structured data. Markdown, attachments, and project files stay on disk. Some settings and derived state use JSON columns. Do not remove migrations or compatibility endpoints solely because they are absent from the current UI: existing databases and clients may depend on them.
 
+The following is a logical model inferred from the SQLAlchemy models and Alembic migrations; it is not a replacement for an exported production schema.
+
+```mermaid
+erDiagram
+    USER ||--o{ PROJECT_MEMBERSHIP : joins
+    PROJECT ||--o{ PROJECT_MEMBERSHIP : grants
+    PROJECT ||--o{ COMMAND : owns
+    PROJECT ||--o{ TERMINAL_SESSION : scopes
+    PROJECT ||--o{ TIMELINE_ENTRY : records
+    PROJECT ||--o{ REPORT : contains
+    PROJECT ||--o{ GRAPH_NODE : contains
+    GRAPH_NODE ||--o{ GRAPH_EDGE : source
+    GRAPH_NODE ||--o{ GRAPH_EDGE : target
+    PROJECT ||--o{ AI_CONVERSATION : scopes
+    AI_CONVERSATION ||--o{ AI_MESSAGE : contains
+    KNOWLEDGE_SOURCE ||--o{ TIMELINE_KB_LINK : links
+    TIMELINE_ENTRY ||--o{ TIMELINE_KB_LINK : references
+    USER {
+        uuid id PK
+        string email
+    }
+    PROJECT {
+        uuid id PK
+        string name
+        string status
+        string workspace_path
+    }
+    PROJECT_MEMBERSHIP {
+        uuid user_id FK
+        uuid project_id FK
+        string role
+    }
+    COMMAND {
+        uuid id PK
+        uuid project_id FK
+        string name
+        string command_template
+    }
+    TERMINAL_SESSION {
+        uuid id PK
+        uuid project_id FK
+        string provider
+        string status
+    }
+    TIMELINE_ENTRY {
+        uuid id PK
+        uuid project_id FK
+        string kind
+        datetime created_at
+    }
+    KNOWLEDGE_SOURCE {
+        uuid id PK
+        string path
+        string source_type
+    }
+    REPORT {
+        uuid id PK
+        uuid project_id FK
+        string status
+    }
+    GRAPH_NODE {
+        uuid id PK
+        uuid project_id FK
+        string node_type
+    }
+    GRAPH_EDGE {
+        uuid id PK
+        uuid source_node_id FK
+        uuid target_node_id FK
+    }
+    AI_CONVERSATION {
+        uuid id PK
+        uuid project_id FK
+        string provider
+    }
+    AI_MESSAGE {
+        uuid id PK
+        uuid conversation_id FK
+        string role
+    }
+    TIMELINE_KB_LINK {
+        uuid timeline_id FK
+        uuid knowledge_id FK
+    }
+```
+
 ## Configuration and execution
 
 Copy the root `.env.example` to `.env`, then run `start.ps1` on Windows or `bash start.sh` on Linux/Kali. The default application and API ports are 5173 and 8001. The launchers set `VITE_API_URL` and apply migrations before starting services. Configuration details are in the [README](../README.md#configuration).
